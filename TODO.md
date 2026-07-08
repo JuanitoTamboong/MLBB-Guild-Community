@@ -1,11 +1,6 @@
-- [x] Inspect repo relevant files
-- [x] Read index.html and css/style.css
-- [x] Brainstorm/approve edit plan to center form
-- [x] Update css/style.css to center the form
-- [x] Verify by running/opening index.html
-- [x] Add animated fire/embers background
-- [x] Build account form inside the existing form area (username/email/password + forgot password + signup)
+- [x] Fix loading screen HTML paths and add completed/enter button
+- [x] Update loading screen CSS to show completed button only at 100%
+- [x] Rewrite js/loading.js to: reach 100%, reveal button, and on click play mp3 then go to login.html
+- [ ] Smoke test by opening index.html in browser
 
-- [ ] Style it to match ancient/theme (font, colors, borders, shadows)
-- [ ] Verify layout
 

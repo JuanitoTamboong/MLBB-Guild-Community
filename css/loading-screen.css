@@ -1,39 +1,386 @@
 /* ============================================
-   style.css  –  ANCIENT THEME · PERFECT FIT
+   loading-screen.css – ANCIENT LOADING THEME
    ============================================ */
-@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&family=Cinzel:wght@400;600&display=swap');
-
-:root {
-  --font-primary: 'Cinzel', 'Times New Roman', serif;
-  --font-accent: 'MedievalSharp', cursive;
-  --gold: #c9a84c;
-  --gold-dark: #a8893a;
-  --gold-light: #e8d5a3;
-  --brown-dark: #1a120c;
-  --brown-mid: #2d1f14;
-  --brown-light: #4d3522;
-}
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=MedievalSharp&display=swap');
 
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 html, body {
-  height: 100%;
-  overflow: hidden;
+    height: 100%;
+    overflow: hidden;
 }
 
 body {
-  background-color: #0a0806;
-  background-image: url('../assets/loading-assets/Loading-bg.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-primary);
-  padding: 16px;
+    font-family: 'Cinzel', serif;
+    background: #0a0806;
+}
+
+/* ============================================
+   LOADING CONTAINER
+   ============================================ */
+.loading-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* ============================================
+   LOADING BACKGROUND
+   ============================================ */
+.loading-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.4) saturate(0.8);
+}
+
+/* ============================================
+   LOADING CONTENT - Centers the loading screen
+   ============================================ */
+.loading-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 550px;
+    padding: 20px;
+}
+
+/* ============================================
+   LOADING SCREEN WRAPPER - Contains the PNG and overlay
+   ============================================ */
+.loading-screen-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ============================================
+   LOADING IMAGE - The background PNG
+   ============================================ */
+.loading-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 0 40px rgba(201, 168, 76, 0.1));
+    animation: floatImage 3s ease-in-out infinite;
+}
+
+@keyframes floatImage {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+}
+
+/* ============================================
+   LOADING OVERLAY - Everything on top of the PNG
+   ============================================ */
+.loading-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15% 15% 12%;
+    gap: 2px;
+}
+
+/* ============================================
+   LOADING PROGRESS - Centered on the PNG
+   ============================================ */
+.loading-progress {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    flex: 1;
+    justify-content: center;
+}
+
+/* Percentage text - LARGE and CENTERED on the PNG */
+.progress-percent {
+    color: #e8d5a3;
+    font-size: 52px;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-shadow: 
+        0 0 40px rgba(201, 168, 76, 0.3),
+        0 0 80px rgba(0, 0, 0, 0.9),
+        0 4px 20px rgba(0, 0, 0, 0.8);
+    font-family: 'Cinzel', serif;
+    line-height: 1;
+    transition: opacity 0.3s ease;
+}
+
+/* Progress Bar */
+.progress-bar {
+    width: 70%;
+    height: 5px;
+    background: rgba(201, 168, 76, 0.15);
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid rgba(201, 168, 76, 0.1);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, 
+        rgba(201, 168, 76, 0.3),
+        #c9a84c,
+        #e8d5a3,
+        #c9a84c,
+        rgba(201, 168, 76, 0.3)
+    );
+    background-size: 200% 100%;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+    animation: shimmer 2s infinite linear;
+    box-shadow: 0 0 20px rgba(201, 168, 76, 0.2);
+}
+
+@keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* ============================================
+   LOADING TIPS - Below progress bar
+   ============================================ */
+.loading-tips {
+    width: 80%;
+    text-align: center;
+    min-height: 25px;
+    margin-top: 2px;
+}
+
+.loading-tips p {
+    color: rgba(200, 185, 160, 0.7);
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
+    font-family: 'MedievalSharp', cursive;
+    transition: opacity 0.5s ease;
+    white-space: nowrap;
+}
+
+/* ============================================
+   GUILD BADGE - Bottom of the PNG
+   ============================================ */
+.guild-badge-loading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    opacity: 0.7;
+    margin-top: 5px;
+}
+
+.guild-badge-loading .badge-icon {
+    font-size: 16px;
+    color: #d4a853;
+    text-shadow: 0 0 30px rgba(201, 168, 76, 0.2);
+}
+
+.guild-badge-loading .badge-text {
+    font-size: 10px;
+    letter-spacing: 0.5em;
+    color: #b8944a;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+}
+
+/* ============================================
+   ENTER BUTTON (shown at 100%)
+   ============================================ */
+.enter-btn {
+    display: none;
+    width: 60%;
+    max-width: 240px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    transition: transform 0.2s ease, filter 0.2s ease;
+    padding: 0;
+    margin-top: 5px;
+}
+
+.enter-btn-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 0 25px rgba(201, 168, 76, 0.3));
+    border-radius: 6px;
+}
+
+.enter-btn:hover {
+    transform: translateY(-2px) scale(1.03);
+    filter: brightness(1.1) drop-shadow(0 0 40px rgba(201, 168, 76, 0.4));
+}
+
+.enter-btn:active {
+    transform: scale(0.95);
+}
+
+.enter-btn.visible {
+    display: block;
+    animation: enterPop 0.8s ease-out both;
+}
+
+@keyframes enterPop {
+    0% {
+        opacity: 0;
+        transform: scale(0.85) rotate(-2deg);
+    }
+    60% {
+        transform: scale(1.05) rotate(0.5deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+    .loading-content {
+        max-width: 450px;
+        padding: 15px;
+    }
+
+    .loading-overlay {
+        padding: 12% 12% 10%;
+    }
+
+    .progress-percent {
+        font-size: 40px;
+    }
+
+    .progress-bar {
+        width: 65%;
+    }
+
+    .loading-tips p {
+        font-size: 12px;
+    }
+
+    .guild-badge-loading .badge-text {
+        font-size: 9px;
+        letter-spacing: 0.4em;
+    }
+
+    .guild-badge-loading .badge-icon {
+        font-size: 14px;
+    }
+    
+    .enter-btn {
+        width: 55%;
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .loading-content {
+        max-width: 350px;
+        padding: 10px;
+    }
+
+    .loading-overlay {
+        padding: 10% 10% 8%;
+        gap: 0px;
+    }
+
+    .progress-percent {
+        font-size: 32px;
+    }
+
+    .progress-bar {
+        width: 60%;
+        height: 4px;
+    }
+
+    .loading-tips p {
+        font-size: 10px;
+    }
+
+    .loading-tips {
+        min-height: 18px;
+    }
+
+    .guild-badge-loading .badge-text {
+        font-size: 7px;
+        letter-spacing: 0.3em;
+    }
+
+    .guild-badge-loading .badge-icon {
+        font-size: 11px;
+    }
+    
+    .enter-btn {
+        width: 50%;
+        max-width: 160px;
+    }
+}
+
+@media (max-width: 360px) {
+    .loading-content {
+        max-width: 280px;
+        padding: 8px;
+    }
+
+    .loading-overlay {
+        padding: 8% 8% 6%;
+    }
+
+    .progress-percent {
+        font-size: 26px;
+    }
+
+    .progress-bar {
+        width: 55%;
+        height: 3px;
+    }
+
+    .loading-tips p {
+        font-size: 9px;
+    }
+
+    .guild-badge-loading .badge-text {
+        font-size: 6px;
+        letter-spacing: 0.25em;
+    }
+
+    .guild-badge-loading .badge-icon {
+        font-size: 10px;
+    }
 }

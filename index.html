@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MLBB · Loading</title>
+    <link rel="stylesheet" href="./css/loading-screen.css">
+</head>
+<body>
+    <div class="loading-container">
+        <!-- Background -->
+        <div class="loading-bg">
+            <img src="./assets/loading-assets/Loading-bg.png" alt="Loading Background" class="bg-image">
+        </div>
+
+        <!-- Loading Screen Content - OVERLAY on top of Loading-Screen.png -->
+        <div class="loading-content">
+            <!-- The Loading-Screen.png as background container -->
+            <div class="loading-screen-wrapper">
+                <img src="./assets/loading-assets/Loading-Screen.png" alt="Loading" class="loading-image" />
+                
+                <!-- All content OVERLAY on top of the loading screen image -->
+                <div class="loading-overlay">
+                    <!-- Loading Progress -->
+                    <div class="loading-progress">
+                        <!-- Percentage text - CENTERED -->
+                        <span class="progress-percent" id="progressText">0%</span>
+                        
+                        <!-- Progress Bar -->
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        
+                        <!-- Loading Tips -->
+                        <div class="loading-tips">
+                            <p id="tipText">⚔ Summon your ancient power...</p>
+                        </div>
+                    </div>
+
+
+                    <!-- Enter button (shown at 100%) -->
+                    <button id="enterBtn" class="enter-btn" type="button" aria-label="Enter the Guild">
+                        <img class="enter-btn-img" src="./assets/loading-assets/completed-btn.png" alt="Enter" />
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/loading.js"></script>
+</body>
+</html>
