@@ -10,26 +10,25 @@
 <body>
     <div class="container">
         <div class="form-wrapper">
-            <!-- the form background image -->
+            <!-- form background -->
             <img src="./assets/mlbb-form.png" alt="Guild Hall" class="form-bg-img" />
 
-            <!-- overlay content – clean, centered, no blur -->
+            <!-- overlay content -->
             <div class="auth-overlay">
-                <!-- top badge -->
-                <div class="guild-badge">
-                    <span class="badge-icon">⚔</span>
-                    <span class="badge-text">ANCIENT ORDER</span>
-                    <span class="badge-icon">🛡</span>
+                <!-- ancient seal -->
+                <div class="guild-seal">
+                    <span class="seal-rune">ᚠ</span>
+                    <span class="seal-text">ANCIENT ORDER</span>
+                    <span class="seal-rune">ᚢ</span>
                 </div>
 
-                <!-- main title -->
+                <!-- title -->
                 <h1 class="auth-title">MLBB GUILD LOGIN</h1>
 
-                <!-- form fields -->
+                <!-- form -->
                 <form class="auth-form" action="#" method="post">
-                    <!-- account field -->
                     <div class="field">
-                        <label for="account">📜 ACCOUNT / EMAIL</label>
+                        <label for="account">⚔ ACCOUNT / EMAIL</label>
                         <input
                             id="account"
                             name="account"
@@ -40,7 +39,6 @@
                         />
                     </div>
 
-                    <!-- password field -->
                     <div class="field">
                         <label for="password">🔑 PASSWORD</label>
                         <input
@@ -53,17 +51,16 @@
                         />
                     </div>
 
-                    <!-- forgot link -->
                     <div class="row">
                         <a class="link" href="#">Forgot your rune?</a>
                     </div>
 
-                    <!-- main CTA -->
-                    <button class="btn" type="submit">⚔ ENTER THE GUILD ⚔</button>
+                    <button class="btn-login" type="submit">
+                        <img src="./assets/login-btn.svg" alt="Enter the Guild" class="btn-login-img" />
+                    </button>
 
                     <div class="divider"></div>
 
-                    <!-- signup / guest -->
                     <p class="muted">
                         No guild yet?
                         <a class="link" href="#">Summon your clan</a>
