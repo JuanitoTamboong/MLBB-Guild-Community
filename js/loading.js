@@ -7,9 +7,13 @@
     const tipText = document.getElementById('tipText');
     const enterBtn = document.getElementById('enterBtn');
 
-    const TARGET_URL = './login.html';
+    const TARGET_VIEW = {
+        loginContainerId: 'loginView'
+    };
 
-    if (!progressFill || !progressText || !tipText || !enterBtn) {
+    const loginView = document.getElementById(TARGET_VIEW.loginContainerId);
+
+    if (!progressFill || !progressText || !tipText || !enterBtn || !loginView) {
         return;
     }
 
@@ -56,11 +60,37 @@
         if (guildBadge) guildBadge.style.opacity = '0';
     }
 
-    function navigateToLogin() {
-        window.location.href = TARGET_URL;
+    function revealLoginView() {
+        const audio = document.getElementById('bgMusic');
+
+        // Reveal login UI (if already finished, this is harmless)
+        const loadingContainer = document.getElementById('loadingView');
+        if (loadingContainer) loadingContainer.style.display = 'none';
+        if (loginView) loginView.style.display = 'flex';
+
+        // Sound: autoplay-safe (may require user gesture)
+        if (audio) {
+            audio.volume = 0.9;
+            audio.loop = true;
+
+            // First try (button click counts as user gesture)
+            const playPromise = audio.play();
+            if (playPromise && typeof playPromise.catch === 'function') {
+                playPromise.catch(() => {
+                    // If blocked anyway, retry on any click/tap.
+                    const retry = () => {
+                        audio.play().catch(() => {});
+                        document.removeEventListener('click', retry);
+                        document.removeEventListener('touchstart', retry);
+                    };
+                    document.addEventListener('click', retry, { passive: true, once: true });
+                    document.addEventListener('touchstart', retry, { passive: true, once: true });
+                });
+            }
+        }
     }
 
-    enterBtn.addEventListener('click', navigateToLogin);
+    enterBtn.addEventListener('click', revealLoginView);
 
     // MAIN PROGRESS UPDATE - SMOOTH AND NATURAL
     function updateProgress() {

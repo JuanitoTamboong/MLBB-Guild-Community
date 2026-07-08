@@ -1,6 +1,7 @@
-- [x] Fix loading screen HTML paths and add completed/enter button
-- [x] Update loading screen CSS to show completed button only at 100%
-- [x] Rewrite js/loading.js to: reach 100%, reveal button, and on click play mp3 then go to login.html
-- [ ] Smoke test by opening index.html in browser
+- [ ] Create combined single-page HTML (loading + login) in index.html
+- [ ] Update js/loading.js to reveal login view instead of navigating to login.html
+- [ ] Add audio element for sound from sound/samuelfjohanns-the-cradle-113847.mp3 with autoplay-safe play
+- [ ] Ensure CSS links for both loading and login are included
+- [x] Quick manual test: open index.html and verify loading -> login + sound (manual check)
 
 
