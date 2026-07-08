@@ -1,18 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MLBB Guild Community Login</title>
-     <link rel="stylesheet" href="./css/style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MLBB Guild · Ancient Order</title>
+    <link rel="stylesheet" href="fonts.css" />
+    <link rel="stylesheet" href="./css/style.css" />
 </head>
 <body>
     <div class="container">
-        <div class="form">
-         <img src="./assets/mlbb-form.png" alt="">
-         
+        <div class="form-wrapper">
+            <!-- the form background image -->
+            <img src="./assets/mlbb-form.png" alt="Guild Hall" class="form-bg-img" />
+
+            <!-- overlay content – clean, centered, no blur -->
+            <div class="auth-overlay">
+                <!-- top badge -->
+                <div class="guild-badge">
+                    <span class="badge-icon">⚔</span>
+                    <span class="badge-text">ANCIENT ORDER</span>
+                    <span class="badge-icon">🛡</span>
+                </div>
+
+                <!-- main title -->
+                <h1 class="auth-title">MLBB GUILD LOGIN</h1>
+
+                <!-- form fields -->
+                <form class="auth-form" action="#" method="post">
+                    <!-- account field -->
+                    <div class="field">
+                        <label for="account">📜 ACCOUNT / EMAIL</label>
+                        <input
+                            id="account"
+                            name="account"
+                            type="text"
+                            autocomplete="username"
+                            placeholder="Enter your guild name"
+                            required
+                        />
+                    </div>
+
+                    <!-- password field -->
+                    <div class="field">
+                        <label for="password">🔑 PASSWORD</label>
+                        <input
+                            id="password"
+                            name="password"
+                            type="password"
+                            autocomplete="current-password"
+                            placeholder="••••••••"
+                            required
+                        />
+                    </div>
+
+                    <!-- forgot link -->
+                    <div class="row">
+                        <a class="link" href="#">Forgot your rune?</a>
+                    </div>
+
+                    <!-- main CTA -->
+                    <button class="btn" type="submit">⚔ ENTER THE GUILD ⚔</button>
+
+                    <div class="divider"></div>
+
+                    <!-- signup / guest -->
+                    <p class="muted">
+                        No guild yet?
+                        <a class="link" href="#">Summon your clan</a>
+                    </p>
+                </form>
+            </div>
         </div>
     </div>
-  <script src="./js/particles-fire.js"></script>
+
+    <script src="particles-fire.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 </html>
