@@ -1,0 +1,39 @@
+/* ============================================
+   style.css  –  ANCIENT THEME · PERFECT FIT
+   ============================================ */
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&family=Cinzel:wght@400;600&display=swap');
+
+:root {
+  --font-primary: 'Cinzel', 'Times New Roman', serif;
+  --font-accent: 'MedievalSharp', cursive;
+  --gold: #c9a84c;
+  --gold-dark: #a8893a;
+  --gold-light: #e8d5a3;
+  --brown-dark: #1a120c;
+  --brown-mid: #2d1f14;
+  --brown-light: #4d3522;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background-color: #0a0806;
+  background-image: url('../assets/loading-assets/Loading-bg.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-primary);
+  padding: 16px;
+}
