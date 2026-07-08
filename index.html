@@ -13,33 +13,38 @@
             <img src="./assets/loading-assets/Loading-bg.png" alt="Loading Background" class="bg-image">
         </div>
 
-        <!-- Loading Screen Content - OVERLAY on top of Loading-Screen.png -->
+        <!-- Loading Screen Content -->
         <div class="loading-content">
-            <!-- The Loading-Screen.png as background container -->
             <div class="loading-screen-wrapper">
-                <img src="./assets/loading-assets/Loading-Screen.png" alt="Loading" class="loading-image" />
+                <!-- Loading-Screen.png as background -->
+                <img src="./assets/loading-assets/Loading-Screen.png" alt="Loading" class="loading-image" id="loadingImage" />
                 
-                <!-- All content OVERLAY on top of the loading screen image -->
+                <!-- OVERLAY - everything on top of the PNG -->
                 <div class="loading-overlay">
-                    <!-- Loading Progress -->
-                    <div class="loading-progress">
-                        <!-- Percentage text - CENTERED -->
-                        <span class="progress-percent" id="progressText">0%</span>
-                        
-                        <!-- Progress Bar -->
+                    <!-- Percentage -->
+                    <span class="progress-percent" id="progressText">0%</span>
+                    
+                    <!-- Progress Bar -->
+                    <div class="progress-bar-container">
                         <div class="progress-bar">
                             <div class="progress-fill" id="progressFill"></div>
                         </div>
-                        
-                        <!-- Loading Tips -->
-                        <div class="loading-tips">
-                            <p id="tipText">⚔ Summon your ancient power...</p>
-                        </div>
+                    </div>
+                    
+                    <!-- Loading Tips -->
+                    <div class="loading-tips">
+                        <p id="tipText">⚔ Summon your ancient power...</p>
                     </div>
 
+                    <!-- Guild Badge -->
+                    <div class="guild-badge-loading">
+                        <span class="badge-icon">⚔</span>
+                        <span class="badge-text">ANCIENT ORDER</span>
+                        <span class="badge-icon">🛡</span>
+                    </div>
 
-                    <!-- Enter button (shown at 100%) -->
-                    <button id="enterBtn" class="enter-btn" type="button" aria-label="Enter the Guild">
+                    <!-- Enter button -->
+                    <button id="enterBtn" class="enter-btn" type="button">
                         <img class="enter-btn-img" src="./assets/loading-assets/completed-btn.png" alt="Enter" />
                     </button>
                 </div>
