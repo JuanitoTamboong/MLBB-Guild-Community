@@ -7,13 +7,7 @@
     const tipText = document.getElementById('tipText');
     const enterBtn = document.getElementById('enterBtn');
 
-    const TARGET_VIEW = {
-        loginContainerId: 'loginView'
-    };
-
-    const loginView = document.getElementById(TARGET_VIEW.loginContainerId);
-
-    if (!progressFill || !progressText || !tipText || !enterBtn || !loginView) {
+    if (!progressFill || !progressText || !tipText || !enterBtn) {
         return;
     }
 
@@ -63,21 +57,15 @@
     function revealLoginView() {
         const audio = document.getElementById('bgMusic');
 
-        // Reveal login UI (if already finished, this is harmless)
-        const loadingContainer = document.getElementById('loadingView');
-        if (loadingContainer) loadingContainer.style.display = 'none';
-        if (loginView) loginView.style.display = 'flex';
-
-        // Sound: autoplay-safe (may require user gesture)
+        // Sound: must be triggered by the click gesture before navigation.
         if (audio) {
             audio.volume = 0.9;
             audio.loop = true;
 
-            // First try (button click counts as user gesture)
             const playPromise = audio.play();
             if (playPromise && typeof playPromise.catch === 'function') {
                 playPromise.catch(() => {
-                    // If blocked anyway, retry on any click/tap.
+                    // Retry if browser still blocks autoplay.
                     const retry = () => {
                         audio.play().catch(() => {});
                         document.removeEventListener('click', retry);
@@ -88,9 +76,13 @@
                 });
             }
         }
+
+        // Navigate to dedicated login page.
+        window.location.href = './login.html';
     }
 
     enterBtn.addEventListener('click', revealLoginView);
+
 
     // MAIN PROGRESS UPDATE - SMOOTH AND NATURAL
     function updateProgress() {
