@@ -60,6 +60,7 @@
 
     <!-- Login view (hidden until loading completes) -->
     <div id="loginView" class="container" style="display:none;">
+
         <div class="form-wrapper">
             <!-- form background -->
             <img src="./assets/mlbb-form.png" alt="Guild Hall" class="form-bg-img" />
@@ -76,7 +77,8 @@
                 <h1 class="auth-title">MLBB GUILD LOGIN</h1>
 
                 <!-- form -->
-                <form class="auth-form" action="#" method="post">
+                <form id="loginForm" class="auth-form" action="#" method="post">
+
                     <div class="field">
                         <label for="account">⚔ ACCOUNT / EMAIL</label>
                         <input
@@ -109,23 +111,84 @@
                         <img src="./assets/login-btn.svg" alt="Enter the Guild" class="btn-login-img" />
                     </button>
 
+                    <div id="loginError" style="display:none; color: rgba(232, 213, 163, 0.85); font-size: 10px; text-align:center; padding-top: 6px;"></div>
+
                     <div class="divider"></div>
+
 
                     <p class="muted">
                         No guild yet?
-                        <a class="link" href="#">Summon your clan</a>
+                        <a class="link" href="#" data-action="go-signup">Summon your clan</a>
                     </p>
                 </form>
             </div>
         </div>
     </div>
 
+    <!-- Signup view (hidden until needed) -->
+    <div id="signupView" class="container" style="display:none;">
+        <div class="form-wrapper">
+            <img src="./assets/mlbb-form.png" alt="Guild Hall" class="form-bg-img" />
+            <div class="auth-overlay">
+                <div class="guild-seal">
+                    <span class="seal-rune">ᚠ</span>
+                    <span class="seal-text">ANCIENT ORDER</span>
+                    <span class="seal-rune">ᚢ</span>
+                </div>
+
+                <h1 class="auth-title">MLBB GUILD SIGN UP</h1>
+
+                <form id="signupForm" class="auth-form" action="#" method="post">
+                    <div class="field">
+                        <label for="signupAccount">⚔ ACCOUNT / EMAIL</label>
+                        <input
+                            id="signupAccount"
+                            name="signupAccount"
+                            type="text"
+                            autocomplete="username"
+                            placeholder="Enter your guild name"
+                            required
+                        />
+                    </div>
+
+                    <div class="field">
+                        <label for="signupPassword">🔑 PASSWORD</label>
+                        <input
+                            id="signupPassword"
+                            name="signupPassword"
+                            type="password"
+                            autocomplete="new-password"
+                            placeholder="••••••••"
+                            required
+                        />
+                    </div>
+
+                    <div id="signupError" style="display:none; color: rgba(232, 213, 163, 0.85); font-size: 10px; text-align:center; padding-top: 6px;"></div>
+
+                    <button class="btn-login" type="submit">
+                        <img src="./assets/login-btn.svg" alt="Create account" class="btn-login-img" />
+                    </button>
+
+                    <div class="divider"></div>
+
+                    <p class="muted">
+                        Already have a guild?
+                        <a class="link" href="#" data-action="go-login">Return to login</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+
     <!-- Audio-safe: show login + start sound from loading.js -->
     <script src="./js/loading.js"></script>
 
     <!-- Particles + login effects (run after login becomes visible) -->
     <script src="./animated/particles-fireflies.js" defer></script>
-    <script src="./js/script.js" defer></script>
+    <script type="module" src="./js/script.js"></script>
+
 
 </body>
 </html>
