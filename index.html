@@ -7,13 +7,11 @@
     <link rel="stylesheet" href="./css/loading-screen.css">
     <link rel="stylesheet" href="fonts.css" />
     <link rel="stylesheet" href="./css/style.css" />
-
 </head>
 <body>
     <audio id="bgMusic" src="./sound/samuelfjohanns-the-cradle-113847.mp3" preload="auto" loop></audio>
 
     <div id="loadingView" class="loading-container">
-    
         <!-- Background -->
         <div class="loading-bg">
             <img src="./assets/loading-assets/Loading-bg.png" alt="Loading Background" class="bg-image">
@@ -22,34 +20,27 @@
         <!-- Loading Screen Content -->
         <div class="loading-content">
             <div class="loading-screen-wrapper">
-                <!-- Loading-Screen.png as background -->
                 <img src="./assets/loading-assets/Loading-Screen.png" alt="Loading" class="loading-image" id="loadingImage" />
                 
-                <!-- OVERLAY - everything on top of the PNG -->
                 <div class="loading-overlay">
-                    <!-- Percentage -->
                     <span class="progress-percent" id="progressText">0%</span>
                     
-                    <!-- Progress Bar - WIDE to match PNG -->
                     <div class="progress-bar-container">
                         <div class="progress-bar">
                             <div class="progress-fill" id="progressFill"></div>
                         </div>
                     </div>
                     
-                    <!-- Loading Tips -->
                     <div class="loading-tips">
                         <p id="tipText">⚔ Summon your ancient power...</p>
                     </div>
 
-                    <!-- Guild Badge -->
                     <div class="guild-badge-loading">
                         <span class="badge-icon">⚔</span>
                         <span class="badge-text">ANCIENT ORDER</span>
                         <span class="badge-icon">🛡</span>
                     </div>
 
-                    <!-- Enter button -->
                     <button id="enterBtn" class="enter-btn" type="button">
                         <img class="enter-btn-img" src="./assets/loading-assets/completed-btn.png" alt="Enter" />
                     </button>
@@ -58,14 +49,14 @@
         </div>
     </div>
 
-    <!-- Login view (hidden until loading completes) -->
+    <!-- Login view -->
     <div id="loginView" class="container" style="display:none;">
-
         <div class="form-wrapper">
-            <!-- form background -->
             <img src="./assets/mlbb-form.png" alt="Guild Hall" class="form-bg-img" />
-            <!-- overlay content -->
             <div class="auth-overlay">
+                <!-- LOGO AT TOP -->
+                <img class="form-logo" src="./assets/mlbb-g-c-logo.png" alt="MLBB G.C" />
+
                 <!-- ancient seal -->
                 <div class="guild-seal">
                     <span class="seal-rune">ᚠ</span>
@@ -78,7 +69,6 @@
 
                 <!-- form -->
                 <form id="loginForm" class="auth-form" action="#" method="post">
-
                     <div class="field">
                         <label for="account">⚔ ACCOUNT / EMAIL</label>
                         <input
@@ -115,7 +105,6 @@
 
                     <div class="divider"></div>
 
-
                     <p class="muted">
                         No guild yet?
                         <a class="link" href="#" data-action="go-signup">Summon your clan</a>
@@ -125,11 +114,14 @@
         </div>
     </div>
 
-    <!-- Signup view (hidden until needed) -->
+    <!-- Signup view -->
     <div id="signupView" class="container" style="display:none;">
         <div class="form-wrapper">
             <img src="./assets/mlbb-form.png" alt="Guild Hall" class="form-bg-img" />
             <div class="auth-overlay">
+                <!-- LOGO AT TOP -->
+                <img class="form-logo" src="./assets/mlbb-g-c-logo.png" alt="MLBB G.C" />
+
                 <div class="guild-seal">
                     <span class="seal-rune">ᚠ</span>
                     <span class="seal-text">ANCIENT ORDER</span>
@@ -178,18 +170,10 @@
                 </form>
             </div>
         </div>
-
     </div>
 
-
-    <!-- Audio-safe: show login + start sound from loading.js -->
     <script src="./js/loading.js"></script>
-
-    <!-- Particles + login effects (run after login becomes visible) -->
     <script src="./animated/particles-fireflies.js" defer></script>
     <script type="module" src="./js/script.js"></script>
-
-
 </body>
 </html>
-
