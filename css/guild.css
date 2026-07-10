@@ -46,8 +46,7 @@ body {
     background-image: url('mlbb guilld community.jpg');
     background-size: cover;
     background-position: center;
-    border: 3px solid #233241;
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85);
+ 
     overflow: hidden;
 }
 
@@ -363,22 +362,18 @@ body {
     overflow: visible;
 }
 
-/* Base style processing your unified browser icon layout image */
+/* Base style for bottom navigation icons (these are real per-icon SVGs/images) */
 .edge-icon {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center;
     transition: transform 0.15s ease;
 }
 .nav-item:hover .edge-icon {
     transform: scale(1.08);
 }
 
-/* Contextual shifting adjustments mapping the master shared sprite asset file structure */
-.src-scrim-finder { object-position: 0px center; }
-.src-my-guild      { object-position: -40px center; }
-.src-guild-list    { object-position: -80px center; }
-.src-join-req      { object-position: -120px center; }
 
 .nav-label {
     font-size: 9px;
