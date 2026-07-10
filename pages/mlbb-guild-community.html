@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guild Plaza UI - Mobile Legends</title>
+    <link rel="stylesheet" href="../css/guild.css">
+</head>
+<body>
+
+    <div class="game-container">
+        
+        <header class="top-hud">
+            <div class="profile-card glass-panel">
+                <div class="avatar-slot"></div>
+                <div class="profile-details">
+                    <div class="name-row">
+                        <span class="player-name">NovaX</span>
+                        <span class="rank-icon">👑</span>
+                    </div>
+                    <div class="level-row">Lv. 45</div>
+                    <div class="xp-bar-container">
+                        <div class="xp-bar" style="width: 60%;"></div>
+                        <span class="xp-text">7280 / 12500</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="center-banner">
+                <h1>GUILD PLAZA</h1>
+                <p>Find your squad. Build your legacy.</p>
+            </div>
+
+            <div class="utility-menu glass-panel">
+                <div class="menu-item"><span class="icon">🎁</span><span>Events</span></div>
+                <div class="menu-item"><span class="icon">🛒</span><span>Shop</span></div>
+                <div class="menu-item"><span class="icon">🏆</span><span>Leaderboard</span></div>
+                <div class="menu-item"><span class="icon">✉️</span><span>Mail</span></div>
+                <div class="menu-item"><span class="icon">⚙️</span><span>Settings</span></div>
+                <div class="wifi-indicator">📶</div>
+            </div>
+        </header>
+
+        <section class="left-sidebar">
+            <div class="daily-quests glass-panel">
+                <h3>Daily Quests</h3>
+                <div class="quest-item">
+                    <span>Play 2 matches</span>
+                    <span class="progress gold-text">1/2</span>
+                </div>
+                <div class="quest-item">
+                    <span>Win 1 match</span>
+                    <span class="progress">0/1</span>
+                </div>
+                <div class="quest-item">
+                    <span>Join or Create a Guild</span>
+                    <span class="progress">0/1</span>
+                </div>
+                <div class="chest-reward">📦</div>
+            </div>
+
+            <div class="create-guild glass-panel">
+                <div class="guild-icon-placeholder">👥</div>
+                <h3>CREATE GUILD</h3>
+                <p>Create your own legacy and recruit your warriors.</p>
+                <button class="action-btn gold-btn">Create Now</button>
+            </div>
+        </section>
+
+        <section class="right-sidebar">
+            <div class="mini-map-panel glass-panel">
+                <div class="map-header">
+                    <span>Guild Plaza</span>
+                </div>
+                <div class="map-radar">
+                    <div class="radar-node center-node"></div>
+                    <div class="radar-search">🔍</div>
+                </div>
+            </div>
+
+            <div class="guild-preview-card glass-panel">
+                <div class="card-header">
+                    <div class="guild-crest">🦁</div>
+                    <div class="guild-title-info">
+                        <h2>VALOR</h2>
+                        <span class="guild-region">🌐 Global</span>
+                    </div>
+                    <span class="close-card">✕</span>
+                </div>
+                
+                <div class="member-count">👥 42 / 50</div>
+                <div class="tags-row">
+                    <span class="tag">Competitive</span>
+                    <span class="tag">Active</span>
+                    <span class="tag">Friendly</span>
+                </div>
+
+                <p class="guild-motto">"We fight as one. We rise as Valor."</p>
+
+                <div class="core-time-box">
+                    <span class="label">Core Time</span>
+                    <span class="time gold-text">8:00 PM - 12:00 AM (GMT+8)</span>
+                </div>
+
+                <div class="card-actions">
+                    <button class="action-btn blue-btn">View Details</button>
+                    <button class="action-btn gold-btn">Request to Join</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="global-chat-panel glass-panel">
+            <div class="chat-tabs">
+                <button class="tab-btn active"><span class="tab-icon">🌐</span> Global</button>
+                <button class="tab-btn">👥 Guild</button>
+                <button class="tab-btn">📢 Team</button>
+            </div>
+            
+            <div class="chat-feed">
+                <div class="chat-msg">
+                    <span class="clan-tag gold-text">[LEGACY]</span> <span class="role-tag">[Leader]</span>: 
+                    <span class="text">LF 2 players for 5v5 scrim! Epic+ only.</span>
+                    <span class="timestamp">14:32</span>
+                </div>
+                <div class="chat-msg">
+                    <span class="clan-tag purple-text">[INVICTUS]</span> <span class="role-tag">[Member]</span>: 
+                    <span class="text">We're up for scrim after 9PM. DM!</span>
+                    <span class="timestamp">14:33</span>
+                </div>
+                <div class="chat-msg">
+                    <span class="clan-tag purple-text">Player Zeref</span>: 
+                    <span class="text">Looking for a team to grind tournament.</span>
+                    <span class="timestamp">14:33</span>
+                </div>
+                <div class="chat-msg">
+                    <span class="clan-tag green-text">[AEGIS]</span> <span class="role-tag">[Officer]</span>: 
+                    <span class="text">5v5 match right now! Join up!</span>
+                    <span class="timestamp">14:34</span>
+                </div>
+                <div class="chat-msg">
+                    <span class="clan-tag gold-text">[NEXUS]</span> <span class="role-tag">[Leader]</span>: 
+                    <span class="text">Anyone up for best of 3?</span>
+                    <span class="timestamp">14:34</span>
+                </div>
+            </div>
+
+            <div class="chat-input-row">
+                <input type="text" placeholder="Tap to enter message..." />
+                <button class="emoji-btn">😊</button>
+                <button class="send-btn">Send</button>
+            </div>
+        </section>
+
+        <footer class="bottom-navigation glass-panel">
+            <div class="nav-item">
+                <div class="icon-frame">
+                    <img src="../assets/icons/guilld-list.svg" alt="Guild List" class="edge-icon src-guild-list">
+                </div>
+                <span class="nav-label">Guild List</span>
+            </div>
+            <div class="nav-item badge-active">
+                <div class="icon-frame">
+                    <img src="../assets/icons/join-req.svg" alt="Join Requests" class="edge-icon src-join-req">
+                    <div class="notification-badge">3</div>
+                </div>
+                <span class="nav-label">Join Requests</span>
+            </div>
+            <div class="nav-item">
+                <div class="icon-frame">
+                    <img src="../assets/icons/my-guild.svg" alt="My Guild" class="edge-icon src-my-guild">
+                </div>
+                <span class="nav-label">My Guild</span>
+            </div>
+            <div class="nav-item">
+                <div class="icon-frame">
+                    <img src="../assets/icons/scrim-finder.svg" alt="Scrim Finder" class="edge-icon src-scrim-finder">
+                </div>
+                <span class="nav-label">Scrim Finder</span>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>
