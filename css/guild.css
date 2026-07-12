@@ -46,7 +46,6 @@ body {
     background-image: url('mlbb guilld community.jpg');
     background-size: cover;
     background-position: center;
- 
     overflow: hidden;
 }
 
@@ -178,14 +177,6 @@ body {
     cursor: pointer;
 }
 
-.menu-icon {
-    width: 14px;
-    height: 14px;
-    object-fit: contain;
-    margin-bottom: 2px;
-}
-.menu-item .icon { font-size: 14px; margin-bottom: 2px; color: #fff;}
-
 .menu-icon-img {
     width: 25px;
     height: 25px;
@@ -194,24 +185,27 @@ body {
     filter: drop-shadow(0 0 6px rgba(56, 189, 248, 0.08));
 }
 
+/* Modern Wi-Fi Container Customization */
 .wifi-indicator {
     margin-left: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 24px;
-    height: 24px;
+    width: 26px;
+    height: 26px;
+    transition: color 0.3s ease;
 }
 
-.wifi-indicator .wifi-icon {
-    font-size: 18px;
-    line-height: 1;
+.wifi-svg {
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
-/* Network quality colors */
-#wifiIndicator[data-quality="high"] { color: #10b981; }
-#wifiIndicator[data-quality="medium"] { color: #fbbf24; }
-#wifiIndicator[data-quality="low"] { color: #ef4444; }
+/* Network quality color states matching user target color scheme precisely */
+#wifiIndicator[data-quality="high"] { color: #4da36d; }   /* Authentic Deep Green */
+#wifiIndicator[data-quality="medium"] { color: #fbbf24; } /* Mid Warning Yellow */
+#wifiIndicator[data-quality="low"] { color: #ef4444; }    /* Critical Drop Red */
 
 
 /* --- SIDEBAR ARRAYS --- */
@@ -396,7 +390,6 @@ body {
     overflow: visible;
 }
 
-/* Base style for bottom navigation icons (these are real per-icon SVGs/images) */
 .edge-icon {
     width: 100%;
     height: 100%;
@@ -408,7 +401,6 @@ body {
     transform: scale(1.08);
 }
 
-
 .nav-label {
     font-size: 9px;
     color: #94a3b8;
@@ -417,7 +409,6 @@ body {
 }
 .nav-item:hover .nav-label { color: #f1f5f9; }
 
-/* Notification badges styling overlay */
 .notification-badge {
     position: absolute;
     top: -2px;
