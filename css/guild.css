@@ -252,7 +252,35 @@ body {
     padding: 15px;
     text-align: center;
 }
-.guild-icon-placeholder { font-size: 24px; color: #bf944b; margin-bottom: 5px; }
+.guild-icon-placeholder {
+    font-size: 24px;
+    color: #bf944b;
+    margin-bottom: 8px;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(15, 23, 42, 0.45);
+    border: 1px solid rgba(191, 148, 75, 0.25);
+    border-radius: 14px;
+    box-shadow:
+        inset 0 0 20px rgba(0, 0, 0, 0.35),
+        0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.guild-icon-svg {
+    width: 26px;
+    height: 26px;
+    filter: drop-shadow(0 0 12px rgba(191, 148, 75, 0.25));
+    transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+.create-guild:hover .guild-icon-svg {
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 18px rgba(191, 148, 75, 0.45));
+}
+
 .create-guild h3 { font-size: 12px; color: #f1f5f9; margin-bottom: 4px; letter-spacing: 0.5px;}
 .create-guild p { font-size: 9px; color: #64748b; margin-bottom: 12px; line-height: 1.3; }
 .create-guild .action-btn { width: 100%; }
@@ -271,11 +299,20 @@ body {
 .map-header { font-size: 11px; font-weight: bold; text-align: center; color: #94a3b8; margin-bottom: 6px; }
 .map-radar {
     height: 100px;
-    background: rgba(15, 23, 42, 0.6);
+    /* Guild Plaza mini-map image */
+    background-image: url('../assets/maps/guildplaza-map.png');
+    background-size: cover;
+    background-position: center;
+
+    /* Dark overlay to keep radar node visible */
+    background-color: rgba(15, 23, 42, 0.6);
+    background-blend-mode: multiply;
+
     border: 1px solid #1e293b;
     border-radius: 3px;
     position: relative;
 }
+
 .radar-node {
     position: absolute;
     top: 50%; left: 50%;
@@ -285,7 +322,30 @@ body {
     border-radius: 50%;
     box-shadow: 0 0 8px #38bdf8;
 }
-.radar-search { position: absolute; bottom: 5px; right: 8px; font-size: 12px; color: #64748b; }
+.radar-search {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #38bdf8;
+}
+
+.radar-search-svg {
+    width: 18px;
+    height: 18px;
+    filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.35));
+    transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+.map-radar:hover .radar-search-svg {
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 14px rgba(56, 189, 248, 0.55));
+}
+
 
 .guild-preview-card { padding: 15px; }
 .card-header { display: flex; align-items: center; position: relative; margin-bottom: 10px;}
