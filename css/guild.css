@@ -185,27 +185,42 @@ body {
     filter: drop-shadow(0 0 6px rgba(56, 189, 248, 0.08));
 }
 
-/* Modern Wi-Fi Container Customization */
+/* Dynamic Wi-Fi Status Bar: Styled with the text positioned perfectly below the icon */
 .wifi-indicator {
-    margin-left: 10px;
+    margin-left: 8px;
     display: flex;
+    flex-direction: column; /* Stacks components cleanly vertically */
     align-items: center;
     justify-content: center;
-    width: 26px;
-    height: 26px;
-    transition: color 0.3s ease;
+    gap: 1px;
+    height: 34px;
+    transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .wifi-svg {
     display: block;
-    width: 100%;
-    height: 100%;
+    width: 18px;
+    height: 18px;
 }
 
-/* Network quality color states matching user target color scheme precisely */
-#wifiIndicator[data-quality="high"] { color: #4da36d; }   /* Authentic Deep Green */
-#wifiIndicator[data-quality="medium"] { color: #fbbf24; } /* Mid Warning Yellow */
-#wifiIndicator[data-quality="low"] { color: #ef4444; }    /* Critical Drop Red */
+.ms-value {
+    font-size: 9px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: -0.2px;
+    line-height: 1;
+
+    /* Prevent layout shift when ping digits change (e.g. 12->120) */
+    display: inline-block;
+    min-width: 38px; /* enough for "999 ms" */
+    text-align: center;
+}
+
+
+/* Color states update based on dynamic latency bounds */
+#wifiIndicator[data-quality="high"] { color: #4da36d; }   /* Excellent Green */
+#wifiIndicator[data-quality="medium"] { color: #f1c40f; } /* Moderate Yellow */
+#wifiIndicator[data-quality="low"] { color: #e74c3c; }    /* Spike/Offline Red */
 
 
 /* --- SIDEBAR ARRAYS --- */
