@@ -13,7 +13,10 @@ import { supabase } from './supabaseClient.js';
   const passwordInput = document.getElementById('password');
 
   const signupAccountInput = document.getElementById('signupAccount');
+  const signupIgnInput = document.getElementById('signupIgn');
+  const signupMlIdInput = document.getElementById('signupMlId');
   const signupPasswordInput = document.getElementById('signupPassword');
+
 
   const loginErrorEl = document.getElementById('loginError');
   const signupErrorEl = document.getElementById('signupError');
@@ -82,12 +85,15 @@ import { supabase } from './supabaseClient.js';
     setError(signupErrorEl, '');
 
     const email = (signupAccountInput?.value || '').trim();
+    const ign = (signupIgnInput?.value || '').trim();
+    const mlId = (signupMlIdInput?.value || '').trim();
     const password = signupPasswordInput?.value || '';
 
-    if (!email || !password) {
-      setError(signupErrorEl, 'Please enter account and password.');
+    if (!email || !ign || !mlId || !password) {
+      setError(signupErrorEl, 'Please enter account, IGN, ML ID, and password.');
       return;
     }
+
 
     const { error } = await supabase.auth.signUp({
       email,
